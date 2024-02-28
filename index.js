@@ -1,13 +1,57 @@
+//funcoes
+// function f3(){
+
+// }
+// console.log(f3())
+
+// const hello = () => console.log('Hello')
+// hello()
+
+// const dobro = valor => valor * 2 //opcional colocar em () o valor
+
+// let triplo = (valor) => {
+//     return valor * 3
+// }
+
+// const ehPar = n => {n % 2 === 0}
+// console.log(ehPar(10))
+
+// const f = () => {} //arrow function
+// const umArgumentp  = n => {
+//     console.log(n)
+// }
+
+// const soUmaLinha = () => console.log('Oi')
+
+// const teste1 = (a, b) => { //se usar return dentro das {}
+//     return a + b
+// }
+
+// const teste2 = (a, b) => a + b //return sem {} porem esta ali
+
+// const dobro = function(n){
+//     return 2 * n
+// }
+// const result = dobro(6)
+// console.log(result)
+
+// //valor padrao para um parametro
+// const triplo = function(n = 5){
+//     return 3 * n
+// }
+// console.log(triplo())
+// console.log(triplo(10))
+
 //funcao
-//void m(){} se fosse Java
-function hello(){
-    console.log('Oi') //ordem de execucao, porem nunca foi chamada
-}
-hello() //ordem de execucao, sem um parametro definido
-function hello(nome){ //declaracao
-    console.log('oi,' + nome) //ordem de execucao, e essa foi chamada
-}
-hello('Milena') //ordem de execucao, com um parametro definido
+// //void m(){} se fosse Java
+// function hello(){
+//     console.log('Oi') //ordem de execucao, porem nunca foi chamada
+// }
+// hello() //ordem de execucao, sem um parametro definido
+// function hello(nome){ //declaracao
+//     console.log('oi,' + nome) //ordem de execucao, e essa foi chamada
+// }
+// hello('Milena') //ordem de execucao, com um parametro definido
 
 
 
