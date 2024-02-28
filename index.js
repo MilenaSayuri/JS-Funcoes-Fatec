@@ -1,3 +1,98 @@
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//         cont++
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     return{f1, f2}
+// }
+
+// let eAgoraResult = eAgora()
+// eAgoraResult.f1()
+// eAgoraResult.f2()
+// eAgoraResult.f1()
+
+// function saudacoesFactory(saudacao, nome){
+//     return function(){
+//         console.log(`${saudacao}, ${nome}`)
+//     }
+// }
+
+// let olaJoao =  saudacoesFactory('Ola' , 'Joao')
+// let tchauJoao = saudacoesFactory('Tchau' , 'Joao')
+// olaJoao()
+// tchauJoao()
+
+// function ola(){
+//     let nome = 'Joao'
+//     return function(){
+//         console.log(`Ola, ${nome}`)
+//     }
+// }
+
+// let olaResult = ola()
+// olaResult()
+
+
+// function f(){ //escopo externo
+//     let nome = 'Joao'
+//     function g(){ //escopo interno
+//         console.log(nome)
+//     } //morre o interno
+//     g()
+// } //morre o externo
+// f()
+
+// function f(funcao){
+//     return funcao()
+// }
+
+// function g(){
+//     function outraFuncao(){
+//         console.log('Fui definida por g')
+//         return () => {2}
+//     }
+//     return outraFuncao()
+// }
+
+// console.log(f(g)())
+// console.log(f(g)() + f(g)()) // retorna o console.log porem nao faz a conta que deveria por causa da {2} e nao ha algum return dentro
+
+// const resultadoDaG = g()
+// resultadoDaG()
+// g()() //chamada da funcao usando ()
+
+// f(g()) //f recebe a outra funcao que eh g
+
+// f(g)()
+
+// let umaFuncao = function (){
+//     console.log('Fui armazenada em uma variavel')
+// }
+// umaFuncao()
+
+// f(function(){
+//     console.log('Estou sendo passada para f...')
+// })
+
+// function produzUmaFuncao(a, b, operador){
+//     if(operador === '+')
+//         return function(a, b){ //msm conceito escrito de uma forma
+//             a + b
+//     }
+//     if(operador === '-')
+//     return (a, b) => a - b //msm conceito escrito de outra forma
+// }
+
+// function executa(f){
+//     f()
+// }
+// executa(function(a, b){return a + b})
+
 //funcoes
 // function f3(){
 
