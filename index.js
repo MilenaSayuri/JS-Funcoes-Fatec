@@ -1,10 +1,57 @@
-//uma calculadora faz soma e subtracao, cada operacao envolve dois operandos
-let calculadora = {
-    soma: (n1, n2) => n1 + n2,
-    subtracao: function(a, b){
-        return a - b
+const fs = require('fs')
+const abrirArquivo = (nomeArquivo) => {
+    const exibirConteudo = (erro, conteudo) => {
+        if(erro){
+            console.log(`Erro: ${erro}`)
+        } else{
+            console.log(conteudo.toString())
+            const resultado = +conteudo.toString() * 10
+            const finalizar = (erro) => {
+                if(!erro)
+                    console.log('Conteudo escrito com sucesso')
+                else
+                    console.log('Escrita falhou')
+            }
+            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+        }
     }
+    fs.readFile(nomeArquivo, exibirConteudo) //dar dois parametros: o nome do arquivo e uma funcao callback
 }
+abrirArquivo('arquivo.txt')
+
+// const f1 = () => console.log('f1')
+// const f2 = () => console.log('f2')
+
+// setTimeout(f1, 500)
+// setTimeout(f2, 500)
+// console.log('fim do script principal')
+
+// function demorada (){
+//     //pegar o horário atual do sistema, e descolar ele de 2 segundos no futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); //NO-OP: No operation
+//     const d = 8 + 4
+//     return d
+// }
+
+// const a = 2 + 5
+// const b = 5 + 9
+// setTimeout(function(){
+//     const d = demorada()
+//     console.log('d: ' + d)
+// }, 500)
+
+// const e = 2 + a + b
+// console.log('e: ' + e)
+
+
+//uma calculadora faz soma e subtracao, cada operacao envolve dois operandos
+// let calculadora = {
+//     soma: (n1, n2) => n1 + n2,
+//     subtracao: function(a, b){
+//         return a - b
+//     }
+// }
 
 
 //uma concessionaria tem CNPJ e endereco. Ela possui alguns carros em estoque, cada um deles tem marca, mole e ano de fabricacao
