@@ -1,3 +1,85 @@
+//uma calculadora faz soma e subtracao, cada operacao envolve dois operandos
+let calculadora = {
+    soma: (n1, n2) => n1 + n2,
+    subtracao: function(a, b){
+        return a - b
+    }
+}
+
+
+//uma concessionaria tem CNPJ e endereco. Ela possui alguns carros em estoque, cada um deles tem marca, mole e ano de fabricacao
+//solucao minha
+// let concessionario = {
+//     CNPJ: 'XX. XXX. XXX/0001-XX',
+//     endereco: {
+//         logradouro: 'Rua X',
+//         numero: 100,
+//     },
+//     car: {
+//         marca: 'Hyundai',
+//         modelo: 'HB20',
+//         ano: 2012
+//     }
+// }
+
+//solucao professor
+// let concessionaria = {
+//     CNPJ: '598347589034',
+//     endereco: {
+//         logradouro: 'Rua J',
+//         numero: 50,
+//         bairro: 'Vila Estrela'
+//     },
+//     carro: [
+//         {
+//         marca: 'Ford',
+//         modelo: 'Fiesta',
+//         anoFabricacao: 2015
+//         },
+//         {
+//             marca: 'Hyundai',
+//             modelo: 'HB20',
+//             anoFabricacao: 2012
+//         }
+//     ]
+// }
+
+//acessar a marca do segundo veiculo
+// console.log(concessionaria.carro[1].marca)
+// console.log(concessionaria['carro'][1]['marca'])
+
+// for(let carro of concessionaria.carros){
+//     console.log(`Marca: ${carro.marca}. Modelo: ${carro.modelo}`)
+// }
+
+//se chama Maria, tem 21 anos e mora na rua B, 14
+//objeto aninhados
+// let pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     endereco:{
+//         logradouro: 'Rua B',
+//         numero: 14
+//     }
+// }
+
+// console.log(pessoa.nome)
+// console.log(pessoa.idade)
+// console.log(pessoa.endereco)
+// console.log(pessoa['endereco']['logradouro'])
+// console.log(pessoa.endereco.numero)
+// console.log(pessoa['endereco'.numero])
+// console.log(pessoa.endereco['logradouro'])
+//uma pessoa chamda joao que tem 17 anos de idade
+//JSON: javascript object notation
+// let pessoa = {
+//     nome: 'Joao', //Joa esta associado a chave nome
+//     idade: 17
+// }
+// //. e [] para acessar membros
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
 // function eAgora(){
 //     let cont = 1
 //     function f1(){
