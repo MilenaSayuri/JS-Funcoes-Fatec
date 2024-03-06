@@ -1,23 +1,76 @@
-const fs = require('fs')
-const abrirArquivo = (nomeArquivo) => {
-    const exibirConteudo = (erro, conteudo) => {
-        if(erro){
-            console.log(`Erro: ${erro}`)
-        } else{
-            console.log(conteudo.toString())
-            const resultado = +conteudo.toString() * 10
-            const finalizar = (erro) => {
-                if(!erro)
-                    console.log('Conteudo escrito com sucesso')
-                else
-                    console.log('Escrita falhou')
-            }
-            fs.writeFile('resultado.txt', resultado.toString(), finalizar)
-        }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo) //dar dois parametros: o nome do arquivo e uma funcao callback
+//código síncrono
+const soma = (a, b) => {
+    return new Promise((resolve, reject) => {
+        //se a e b forem positivos
+        //chamar resolve passando a + b como parametro
+        if( a > 0 && b > 0)
+        resolve(a + b)
+        //caso contrario, chamar reject passando texto 'nao use negativos' como parametro
+        else reject ('Nao use Negativos')
+    })
 }
-abrirArquivo('arquivo.txt')
+soma(2, 7)
+.then(res => {
+    console.log(`Resultado: ${res}`)
+})
+.catch(erro => console.log(`Erro: ${erro}`))
+
+soma(-2, 5)
+.then(res => console.log(`Resultado: ${res}`))
+.catch(erro => console.log(`Erro: ${erro}`))
+
+//descobrir como faz o catch
+
+
+// const soma = (a, b) => {
+//     let p = new Promise((resolve, reject) => {
+//         let res = a + b
+//         resolve(res)
+//     })
+//     return p
+// }
+// const aux = soma(2, 2)
+// aux.then((resultado) => {
+//     console.log(resultado)
+// })
+
+//1 + 2 + 3 + ... + n -2 + n - 1 + n
+// const calculoDemorado = (n) => {
+//     let p = new Promise((resolve, reject) => {
+//         let res = 0
+//         for(let i = 1; i <= n; i++)
+//             res += 1
+//         resolve(res)
+//     })
+//     return p
+// }
+
+// const aux = calculoDemorado(3)
+// console.log(aux)
+// aux.then((resultado) => {
+//     console.log(resultado)
+// })
+
+// const fs = require('fs')
+// const abrirArquivo = (nomeArquivo) => {
+//     const exibirConteudo = (erro, conteudo) => {
+//         if(erro){
+//             console.log(`Erro: ${erro}`)
+//         } else{
+//             console.log(conteudo.toString())
+//             const resultado = +conteudo.toString() * 10
+//             const finalizar = (erro) => {
+//                 if(!erro)
+//                     console.log('Conteudo escrito com sucesso')
+//                 else
+//                     console.log('Escrita falhou')
+//             }
+//             fs.writeFile('resultado.txt', resultado.toString(), finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo) //dar dois parametros: o nome do arquivo e uma funcao callback
+// }
+// abrirArquivo('arquivo.txt')
 
 // const f1 = () => console.log('f1')
 // const f2 = () => console.log('f2')
