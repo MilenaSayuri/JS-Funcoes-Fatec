@@ -1,23 +1,85 @@
-//código síncrono
-const soma = (a, b) => {
-    return new Promise((resolve, reject) => {
-        //se a e b forem positivos
-        //chamar resolve passando a + b como parametro
-        if( a > 0 && b > 0)
-        resolve(a + b)
-        //caso contrario, chamar reject passando texto 'nao use negativos' como parametro
-        else reject ('Nao use Negativos')
-    })
-}
-soma(2, 7)
-.then(res => {
-    console.log(`Resultado: ${res}`)
-})
-.catch(erro => console.log(`Erro: ${erro}`))
+//verificar o valor de n, se for negativo, chamar reject passando o texto "somente positivos" como parametro para ela
+//caso contrario, continuar fazendo o que ja faz
+// function calculoDemorado(n){
+//     let p = new Promise(function(resolve, reject){
+//         if(n < 0)
+//             reject("Somente positivos")
+//         else{
+//         let res = 0
+//         for(let i = 1; i <= n; i++) res += 1
+//         resolve(res)
+//         }
+//     })
+//     return p
+// }
+// calculoDemorado(10)
+// .then(res => console.log(res))
+// .catch(erro => console.log("Erro: "+ erro))
 
-soma(-2, 5)
-.then(res => console.log(`Resultado: ${res}`))
-.catch(erro => console.log(`Erro: ${erro}`))
+// //efeito raduken
+// calculoDemorado(10)
+// .then(res => {
+//     console.log(res)
+//     calculoDemorado(6)
+//     .then(res => {
+//         calculoDemorado(7)
+//         .then(res => console.log(res))
+//     })
+// })
+// .catch(erro => console.log("Erro: " + erro))
+
+
+// //1+ 2+ 3 ... + (n-1) + n
+// function calculoRapidinho(n){
+//     return Promise.resolve((n / 2) * (n + 1))
+// }
+
+// calculoRapidinho(100).then(resultado => console.log(resultado))
+
+// function calculoDemorado(n){
+//     let p = new Promise(function(resolve, reject){
+//         let res = 0
+//         for(let i = 1; i <= n; i++) res += 1
+//         resolve(res)
+//     })
+//     return p
+// }
+
+// let minhaPromise = calculoDemorado(100)
+// //then (Computacao com sucesso)
+// //catch (computacao com falha)
+// minhaPromise.then((resultado) => console.log(resultado))
+
+// function calculoDemorado(n){
+//     let res = 0
+//     for(let i = 1; i <= n; i++) res += i
+//     return res
+// }
+
+// const resultado = calculoDemorado(100)
+// console.log(resultado)
+// console.log('Outra coisa qualquer')
+
+//código síncrono
+// const soma = (a, b) => {
+//     return new Promise((resolve, reject) => {
+//         //se a e b forem positivos
+//         //chamar resolve passando a + b como parametro
+//         if( a > 0 && b > 0)
+//         resolve(a + b)
+//         //caso contrario, chamar reject passando texto 'nao use negativos' como parametro
+//         else reject ('Nao use Negativos')
+//     })
+// }
+// soma(2, 7)
+// .then(res => {
+//     console.log(`Resultado: ${res}`)
+// })
+// .catch(erro => console.log(`Erro: ${erro}`))
+
+// soma(-2, 5)
+// .then(res => console.log(`Resultado: ${res}`))
+// .catch(erro => console.log(`Erro: ${erro}`))
 
 //descobrir como faz o catch
 
